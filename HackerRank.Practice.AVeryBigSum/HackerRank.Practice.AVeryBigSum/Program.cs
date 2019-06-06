@@ -11,24 +11,12 @@ namespace HackerRank.Practice.AVeryBigSum
     {
         static void Main(string[] args)
         {
-            TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
-
-            int arCount = Convert.ToInt32(Console.ReadLine());
-
-            long[] ar = Array.ConvertAll(Console.ReadLine().Split(' '), arTemp => Convert.ToInt64(arTemp))
-                ;
-            long result = aVeryBigSum(ar);
-
-            textWriter.WriteLine(result);
-
-            textWriter.Flush();
-            textWriter.Close();
+            //long result = aVeryBigSum(ar);
         }
 
         private static long aVeryBigSum(long[] ar)
         {
             return ar.Aggregate<long, long>(0, (current, t) => current + t);
         }
-    }
     }
 }
